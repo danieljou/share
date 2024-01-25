@@ -30,6 +30,9 @@ export const TaxManagementApi = createApi({
         getTaxes: builder.query({
             query: () => 'get_taxes/'
         }),
+        getRepartitionData: builder.query({
+            query: (id) => `repartition/${id}/`
+        }),
 
     }),
 
@@ -39,5 +42,6 @@ export const TaxManagementApi = createApi({
 export const {
 
     useCreateTaxMutation,
-    useGetTaxesQuery
+    useGetTaxesQuery,
+    useGetRepartitionDataQuery
 } = TaxManagementApi;

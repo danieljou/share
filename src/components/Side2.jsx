@@ -76,6 +76,17 @@ const Side2 = () => {
 						)}
 						{user.user_infos.is_system_admin && (
 							<ul className="flex flex-col w-full">
+								{GESTIONNAIRE_DE_TAXE_MENU.map((menu, index) => (
+									<SIdeGroup2
+										key={index}
+										title={menu.title}
+										links={menu.links}
+									/>
+								))}
+							</ul>
+						)}
+						{user.user_infos.is_system_admin && (
+							<ul className="flex flex-col w-full">
 								{SYSTEM_ADMIN_MENU.map((menu, index) => (
 									<SIdeGroup2
 										key={index}

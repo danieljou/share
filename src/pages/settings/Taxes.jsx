@@ -12,6 +12,18 @@ import { useGetTaxesQuery } from "../../api/TaxManagementApi";
 const Taxes = () => {
 	const { data, isError, isSuccess, isLoading, error } = useGetTaxesQuery();
 	console.table(data);
+	const RenderAction = (params) => {
+		return (
+			<>
+				<Link
+					to={`repartir/${params.row.id}`}
+					className="py-3 px-6 bg-indigo-500 text-white rounded-lg">
+					{" "}
+					Répartir{" "}
+				</Link>
+			</>
+		);
+	};
 	const columns = [
 		{ field: "title", headerName: "Titre", flex: 1 },
 		{
@@ -34,6 +46,12 @@ const Taxes = () => {
 			headerName: "Créateur",
 			flex: 1,
 			valueGetter: (params) => params.row.creator.username,
+		},
+		{
+			field: "Action",
+			headerName: "Créateur",
+			flex: 1,
+			renderCell: RenderAction,
 		},
 	];
 	return (

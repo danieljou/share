@@ -24,6 +24,7 @@ import ValidationList from "../pages/users/ValidationList";
 import Taxes from "../pages/settings/Taxes";
 import Members from "../pages/users/Members";
 import CreateTax from "../pages/settings/CreateTax";
+import RepartirTaxe from "../pages/settings/RepartirTaxe";
 
 const AppRoutes = () => {
 	return (
@@ -69,6 +70,7 @@ const AppRoutes = () => {
 					<Route path="taxes">
 						<Route path="" Component={Taxes} />
 						<Route path="create" Component={CreateTax} />
+						<Route path="repartir/:id" Component={RepartirTaxe} />
 					</Route>
 				</Route>
 				<Route path="/preview" Component={Preview} />
