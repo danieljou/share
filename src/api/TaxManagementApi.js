@@ -33,6 +33,14 @@ export const TaxManagementApi = createApi({
         getRepartitionData: builder.query({
             query: (id) => `repartition/${id}/`
         }),
+        reparatir: builder.mutation({
+            query: (id) => {
+                return {
+                    url: `repartition/${id}/`,
+                    method: 'POST'
+                }
+            }
+        }),
 
     }),
 
@@ -43,5 +51,6 @@ export const {
 
     useCreateTaxMutation,
     useGetTaxesQuery,
-    useGetRepartitionDataQuery
+    useGetRepartitionDataQuery,
+    useReparatirMutation
 } = TaxManagementApi;

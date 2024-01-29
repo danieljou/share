@@ -12,6 +12,7 @@ import { CgSpinner } from "react-icons/cg";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../slices/AuthSlice";
+import { encryptText } from "../utils/HashData";
 const Login = () => {
 	const dispatch = useDispatch();
 	const [isLoading, setIsLoading] = useState(false);
@@ -38,12 +39,25 @@ const Login = () => {
 	}, []);
 	const Submit = async (values) => {
 		setIsLoading(true);
-		const res = await loginUser({ data: values });
+		const { username, password } = values;
+		console.log(values);
+		const res = await loginUser({
+			data: {
+				username: encryptText(
+					username,
+					`${import.meta.env.VITE_CRYPTO_JS_PRIVATE_KEY}`
+				),
+				password: encryptText(
+					password,
+					`${import.meta.env.VITE_CRYPTO_JS_PRIVATE_KEY}`
+				),
+			},
+		});
 		if (res) {
 			setIsLoading(false);
 			if (res.error) {
 				const error = res.error;
-				if (error.status === 400) {
+				if (error.status === 401) {
 					toast.error("Login ou mot de passe incorrect");
 				} else {
 					toast.error("Une érreur est survenue");
