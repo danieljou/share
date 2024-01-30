@@ -25,6 +25,9 @@ import Taxes from "../pages/settings/Taxes";
 import Members from "../pages/users/Members";
 import CreateTax from "../pages/settings/CreateTax";
 import RepartirTaxe from "../pages/settings/RepartirTaxe";
+import OperationsLists from "../pages/users/OperationsLists";
+import TaskDetails from "../components/TaskDetails";
+import FilterTax from "../components/FilterTax";
 
 const AppRoutes = () => {
 	return (
@@ -50,6 +53,12 @@ const AppRoutes = () => {
 					<Route path="dashboard" Component={ClientDash} />
 					<Route path="create-account" Component={CreateMemberAccount} />
 					<Route path="validate-account/:id" Component={OtpVerification} />
+					<Route  path="operations">
+						<Route exact path="" element={<Navigate to="task-details" />} />
+						<Route path="list" Component={OperationsLists}/>
+						<Route path="task-details" Component={TaskDetails}/>
+						<Route path="filterTax" Component={FilterTax}/>
+					</Route>
 				</Route>
 				<Route
 					path="/manage"

@@ -63,6 +63,17 @@ const Side2 = () => {
 								))}
 							</ul>
 						)}
+						{user.user_infos.is_menber && (
+							<ul className="flex flex-col w-full">
+								{MENU2.map((menu, index) => (
+									<SIdeGroup2
+										key={index}
+										title={menu.title}
+										links={menu.links}
+									/>
+								))}
+							</ul>
+						)}
 						{user.user_infos.is_task_account_manager && (
 							<ul className="flex flex-col w-full">
 								{GESTIONNAIRE_DE_TAXE_MENU.map((menu, index) => (
