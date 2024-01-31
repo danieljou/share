@@ -26,7 +26,7 @@ const SearchDataGrid = ({ rows, columns, pd }) => {
 		setFilteredRows(filteredData);
 	};
 	return (
-		<Box sx={{ height: 400, width: "100%" }}>
+		<Box sx={{ width: "100%" }}>
 			<div className={`${pd ? "lg:px-6" : ""} pt-6`}>
 				<TextField
 					fullWidth

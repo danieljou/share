@@ -7,6 +7,7 @@ import HandleLoading from "../../utils/HandleLoading";
 import HandleGetErrors from "../../utils/HandleGetErrors";
 import { DataGrid, frFR } from "@mui/x-data-grid";
 import { Container } from "@mui/material";
+import SearchDataGrid from "../../components/SearchDataGrid";
 
 const UserHome = () => {
 	const { data, isError, isSuccess, isLoading, error } = useGetUsersQuery();
@@ -23,25 +24,8 @@ const UserHome = () => {
 			{isLoading && <HandleLoading />}
 			{isError && <HandleGetErrors error={error} />}
 			{isSuccess && (
-				<div className=" bg-white p-10 my-4">
-					<div className="my-4  ">
-						<Container
-							style={{
-								width: "100%",
-								padding: 0,
-								margin: 0,
-							}}>
-							<DataGrid
-								// sx={{ ...datagridStyles }}
-								density="comfortable"
-								style={{}}
-								// sx={{ width: "100%" }}
-								columns={columns}
-								rows={data}
-								localeText={frFR.components.MuiDataGrid.defaultProps.localeText}
-							/>
-						</Container>
-					</div>
+				<div className=" bg-white p-10 my-4 pb-24">
+					<SearchDataGrid columns={columns} rows={data} />
 				</div>
 			)}
 		</div>

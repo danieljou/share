@@ -132,7 +132,7 @@ const Side2 = () => {
 					</div>
 				</aside>
 				<main className="w-full flex flex-col flex-grow  md:ml-0 transition-all duration-150 ease-in">
-					<header className="header bg-white shadow py-4 px-4 sticky top-0">
+					<header className="header bg-white shadow py-4 px-4 sticky top-0 z-20">
 						<div className="header-content flex items-center flex-row">
 							<button
 								onClick={() => {

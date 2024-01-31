@@ -17,7 +17,7 @@ import { formStyles } from "../../utils/addErrorClasses";
 import FormLoader from "../../components/FormLoader";
 import toast from "react-hot-toast";
 import { datagridStyles } from "../../utils/datagridStyles";
-import SearchDataGrid from "../../components/SearchDataGrid ";
+import SearchDataGrid from "../../components/SearchDataGrid";
 
 const ActionRender = (params) => {
 	const [active, setActive] = useState(false);

@@ -8,7 +8,7 @@ import HandleGetErrors from "../../utils/HandleGetErrors";
 import { Container } from "@mui/material";
 import { DataGrid, frFR } from "@mui/x-data-grid";
 import { useGetTaxesQuery } from "../../api/TaxManagementApi";
-import SearchDataGrid from "../../components/SearchDataGrid ";
+import SearchDataGrid from "../../components/SearchDataGrid";
 
 const Taxes = () => {
 	const { data, isError, isSuccess, isLoading, error } = useGetTaxesQuery();
@@ -16,12 +16,21 @@ const Taxes = () => {
 	const RenderAction = (params) => {
 		return (
 			<>
-				<Link
-					to={`repartir/${params.row.id}`}
-					className="py-3 px-6 bg-indigo-500 text-white rounded-lg">
-					{" "}
-					Répartir{" "}
-				</Link>
+				{params.row.is_close ? (
+					<Link
+						to={`repartir/${params.row.id}`}
+						className="py-3 w-24 text-center bg-green-500 text-white rounded-lg">
+						{" "}
+						Voir{" "}
+					</Link>
+				) : (
+					<Link
+						to={`repartir/${params.row.id}`}
+						className="py-3 w-24 text-center bg-indigo-500 text-white rounded-lg">
+						{" "}
+						Répartir{" "}
+					</Link>
+				)}
 			</>
 		);
 	};
@@ -69,7 +78,7 @@ const Taxes = () => {
 			{isLoading && <HandleLoading />}
 			{isError && <HandleGetErrors error={error} />}
 			{isSuccess && (
-				<div className=" bg-white p-10 my-4 pb-24">
+				<div className=" bg-white p-10 my-4 pb-24 h-auto">
 					<SearchDataGrid columns={columns} rows={data} />
 				</div>
 			)}
