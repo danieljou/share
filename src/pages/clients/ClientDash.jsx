@@ -9,8 +9,10 @@ import { useGetDashboardDataForUserQuery } from "../../api/DashBoardApi";
 import HandleLoading from "../../utils/HandleLoading";
 import HandleGetErrors from "../../utils/HandleGetErrors";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const ClientDash = () => {
+	const user = useSelector((state) => state.auth);
 	const { data, isLoading, isSuccess, isError, error } =
 		useGetDashboardDataForUserQuery();
 	console.log("DATA ", data);
@@ -22,9 +24,6 @@ const ClientDash = () => {
 			{isSuccess && (
 				<div>
 					<div className="div grid grid-col-3 md:grid-cols-3  my-3 ">
-						<div className="col-span-3 lg:col-span-1 sm:col-span-3">
-							<CreditCard />
-						</div>
 						{!data.account && (
 							<div className=" col-span-3 lg:col-span-2 flex flex-col justify-between items-end md:mt-4">
 								<div className="my-4 text-justify ">
@@ -44,16 +43,29 @@ const ClientDash = () => {
 							</div>
 						)}
 						{data.account && (
-							<div className="flex flex-col p-4 justify-between sm:h-[150px]">
-								<p className="font-semibold"> Status : {data.member.status}</p>
-								<div>
-									<Link
-										to={`/user/validate-account/${data.member.id}`}
-										className="py-3 px-12 rounded-lg text-2xl text-white bg-gradient-to-br from-sky-600 to-blue-600 my-4">
-										Valider
-									</Link>
+							<>
+								<div className="col-span-3 lg:col-span-1 sm:col-span-3">
+									<CreditCard
+										name={user.user_infos.username}
+										number={data.account.number}
+									/>
 								</div>
-							</div>
+								<div className="flex flex-col p-4 justify-between sm:h-[150px]">
+									<p className="font-semibold">
+										{" "}
+										Statut : {data.member.status}
+									</p>
+									<div>
+										{data.member.status === "EN ATTENTE" && (
+											<Link
+												to={`/user/validate-account/${data.member.id}`}
+												className="py-3 px-12 rounded-lg text-2xl text-white bg-gradient-to-br from-sky-600 to-blue-600 my-4">
+												Valider
+											</Link>
+										)}
+									</div>
+								</div>
+							</>
 						)}
 					</div>
 					{}

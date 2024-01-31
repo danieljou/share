@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const CreditCard = () => {
+const CreditCard = ({ number, name }) => {
 	return (
 		<>
 			<div className="w-full h-40 bg-gradient-to-r from-blue-700 to-blue-800 rounded-lg shadow-lg">
@@ -39,12 +39,16 @@ const CreditCard = () => {
 					</svg>
 				</div>
 				<div className="flex justify-center mt-4">
-					<h1 className="text-white font-thin font-os">XXXX XXXX XXXX 1234</h1>
+					<h1 className="text-white font-bold text-2xl font-os">
+						<span className="mx-2">{number.slice(0, 2)}</span>
+						<span className="mx-2">{number.slice(2, 5)}</span>
+						<span className="mx-2">{number.slice(5, 7)}</span>
+					</h1>
 				</div>
 				<div className="flex flex-col justfiy-end mt-4 p-4 text-white font-quick">
-					<p className="font-bold text-xs">12 / 17</p>
+					{/* <p className="font-bold text-xs">12 / 17</p> */}
 					<h4 className="uppercase tracking-wider font-semibold text-xs">
-						Our customer
+						{name}
 					</h4>
 				</div>
 			</div>

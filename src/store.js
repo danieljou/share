@@ -6,6 +6,7 @@ import { FormulaApi } from "./api/FormulaApi";
 import { DashBoardApi } from "./api/DashBoardApi";
 import { UserManagementApi } from "./api/UserManegentApi";
 import { TaxManagementApi } from "./api/TaxManagementApi";
+import { OperationApi } from "./api/OperationApi";
 
 
 
@@ -17,6 +18,7 @@ export const store = configureStore({
         [DashBoardApi.reducerPath]: DashBoardApi.reducer,
         [UserManagementApi.reducerPath]: UserManagementApi.reducer,
         [TaxManagementApi.reducerPath]: TaxManagementApi.reducer,
+        [OperationApi.reducerPath]: OperationApi.reducer,
 
     },
 
@@ -27,6 +29,7 @@ export const store = configureStore({
             DashBoardApi.middleware,
             UserManagementApi.middleware,
             TaxManagementApi.middleware,
+            OperationApi.middleware,
 
         ),
 });

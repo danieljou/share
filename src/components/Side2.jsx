@@ -33,7 +33,7 @@ const Side2 = () => {
 							!isToggle && "hidden"
 						}   w-72 md:shadow transform  md:block transition-transform duration-150 ease-in bg-indigo-500   ${
 						isToggle &&
-						"z-20    block md:relative h-screen transition delay-100"
+						"z-30    block md:relative h-screen transition delay-100"
 					} `}>
 					<div className=" flex items-center justify-center py-4  ">
 						<div className="inline-flex">

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const FLex = ({ title, data }) => {
+export const FLex = ({ title, data }) => {
 	return (
 		<div className="flex justify-between my-1">
 			<p className="font-semibold"> {title} </p>

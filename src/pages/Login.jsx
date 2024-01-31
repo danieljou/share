@@ -16,7 +16,7 @@ import { encryptText } from "../utils/HashData";
 const Login = () => {
 	const dispatch = useDispatch();
 	const [isLoading, setIsLoading] = useState(false);
-	const [loginUser] = useLoginMutation();
+	const [loginUser, {}] = useLoginMutation();
 	const navigate = useNavigate();
 
 	useEffect(() => {
