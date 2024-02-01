@@ -44,19 +44,19 @@ const OperationsLists = () => {
 		{ field: "id", headerName: "ID de l'opération", flex: 1 },
 		{
 			field: "date",
-			headerName: "Date",
+			headerName: "Date de versement",
 			flex: 1,
 			valueGetter: (params) => params.row.date.slice(0, 10),
 		},
 		{
 			field: "Heure",
-			headerName: "Heure",
+			headerName: "Heure de versement",
 			flex: 1,
 			valueGetter: (params) => params.row.date.slice(12, 22),
 		},
 		{
 			field: "Montant",
-			headerName: "Montant",
+			headerName: "Montant perçu",
 			flex: 1,
 			valueGetter: (params) => params.row.amount.toLocaleString() + " FCFA",
 		},

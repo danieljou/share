@@ -72,7 +72,7 @@ const RepartirTaxe = () => {
 					</div>
 				</div>
 			</Dialog>
-			<Heading title={"Repartirion de la taxe"} />
+			<Heading title={"Repartition de la taxe"} />
 
 			{isLoading && <HandleLoading />}
 			{isError && <HandleGetErrors error={error} />}
