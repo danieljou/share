@@ -4,7 +4,7 @@ export const TaxManagementApi = createApi({
 
     reducerPath: "TaxManagementApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: `${import.meta.env.VITE_BACKEND_URL}api/tax/`,
+        baseUrl: `${process.env.REACT_APP_BACKEND_URL}api/tax/`,
         prepareHeaders: (headers) => {
             const user = localStorage.getItem("user");
             if (user) {

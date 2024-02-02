@@ -1,6 +1,6 @@
 /** @format */
 
-import {} from "react";
+import { React } from "react";
 import AppRoutes from "./utils/AppRoutes";
 import { Toaster } from "react-hot-toast";
 import { Provider, useDispatch } from "react-redux";

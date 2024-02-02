@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const DashBoardApi = createApi({
     reducerPath: "DashBoardApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: `${import.meta.env.VITE_BACKEND_URL}api/`,
+        baseUrl: `${process.env.REACT_APP_BACKEND_URL}api/`,
         prepareHeaders: (headers) => {
             const user = localStorage.getItem("user");
             if (user) {

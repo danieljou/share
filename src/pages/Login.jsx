@@ -45,11 +45,11 @@ const Login = () => {
 			data: {
 				username: encryptText(
 					username,
-					`${import.meta.env.VITE_CRYPTO_JS_PRIVATE_KEY}`
+					`${process.env.REACT_APP_CRYPTO_JS_PRIVATE_KEY}`
 				),
 				password: encryptText(
 					password,
-					`${import.meta.env.VITE_CRYPTO_JS_PRIVATE_KEY}`
+					`${process.env.REACT_APP_CRYPTO_JS_PRIVATE_KEY}`
 				),
 			},
 		});

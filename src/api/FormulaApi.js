@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const FormulaApi = createApi({
   reducerPath: "FormulaApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${import.meta.env.VITE_BACKEND_URL}api/formula/`,
+    baseUrl: `${process.env.REACT_APP_BACKEND_URL}api/formula/`,
     prepareHeaders: (headers) => {
       const user = localStorage.getItem("user");
       if (user) {

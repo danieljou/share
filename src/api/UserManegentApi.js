@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const UserManagementApi = createApi({
     reducerPath: "UserManagementApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: `${import.meta.env.VITE_BACKEND_URL}auth/`,
+        baseUrl: `${process.env.REACT_APP_BACKEND_URL}auth/`,
         prepareHeaders: (headers) => {
             const user = localStorage.getItem("user");
             if (user) {

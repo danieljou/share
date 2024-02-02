@@ -134,11 +134,11 @@ export const MENU2 = [
     {
         title: 'Mon Compte',
         links: [
-            {
-                img: GiMoneyStack,
-                label: 'Formules',
-                link: '/user/formules'
-            },
+            // {
+            //     img: GiMoneyStack,
+            //     label: 'Formules',
+            //     // link: '/user/formules'
+            // },
             {
                 img: TbReportMoney,
                 label: 'Operations',

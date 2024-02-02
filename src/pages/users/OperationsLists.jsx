@@ -12,7 +12,7 @@ import OperationDetails from "../../components/OperationDetails";
 import FilterTax from "../../components/FilterTax";
 import { CgClose } from "react-icons/cg";
 
-const renderDetails = (params) => {
+export const RenderDetails = (params) => {
 	const [isOpen, setisOpen] = useState(false);
 	console.log("Row", params.row);
 	return (
@@ -64,7 +64,7 @@ const OperationsLists = () => {
 			field: "Details",
 			headerName: "Détails",
 			flex: 1,
-			renderCell: renderDetails,
+			renderCell: RenderDetails,
 		},
 	];
 	return (
